@@ -1,0 +1,17 @@
+#park-buttons {
+    background: aqua;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+#park-form {
+    margin: 20px;
+}
+
+#park-input {
+    margin: 20px;
+}
+
+.container {
+    background: #F3EFE0;
+}

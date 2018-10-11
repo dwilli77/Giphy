@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>National and State Parks Buttons</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+<div class="container">
+    <h1 id="welcome">Welcome to the National and State Park Giphy Exercise</h1>
+  <button data-parks="Yosemite" id="park-buttons">Yosemite</button>
+  <button data-parks="Yellowstone" id="park-buttons">Yellowstone</button>
+  <button data-parks="Zion" id="park-buttons">Zion</button>
+  <button data-parks="Glacier" id="park-buttons">Glacier</button>
+  <button data-parks="Acadia" id="park-buttons">Acadia</button>
+  <button data-parks="Sequoia" id="park-buttons">Sequoia</button>
+  <button data-parks="Grand Teton" id="park-buttons">Grand Teton</button>
+  <button data-parks="Great Smoky Mountains" id="park-buttons">Great Smoky Mountains</button>
+</div>
+
+<div class="container">
+    <form id="park-form">
+        <label for="park-input">Add a National or State Park</label>
+        <input type="text" id="park-input">
+        <br>
+        <input id="add-park" type="submit" value="Add a National or State Park">
+    </form>
+</div>
+
+<div class="container" id="gifs-appear-here">
+</div>
+
+<div id="add-park"></div>
+
+
+</div>
+
+ 
+  <script type="text/javascript" src="assets/javascript/giphy.js"></script>
+</body>
+
+</html>
