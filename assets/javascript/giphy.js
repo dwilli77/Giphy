@@ -1,10 +1,8 @@
 $(document).ready(function() {
 
 $("button").on("click", function() {
-
-var parks = [];
-parks = $(this).attr("data-parks");
-  
+var parksArray = [];
+var parks = $(this).attr("data-parks");
 var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
           parks + "&api_key=2sIeyYSIdhdaA1RkYinrGUPZq99doJyN&limit=10";
   
@@ -18,6 +16,7 @@ $.ajax({
   console.log(response);
 
 var results = response.data;
+// does results have to be an array?
   
   for (var i = 0; i < results.length; i++) {
     var parksDiv = $("<div>");
@@ -34,7 +33,7 @@ function renderButtons() {
 $("#park-buttons").empty();
 var a = $("<button>");
 a.addClass("park-btn");
-a.attr("data-parks", parks[i]);
+a.attr("data-parks", parksArray[i]);
 a.text(parks[i]);
 $("#park-buttons").append(a);
 
@@ -43,7 +42,7 @@ $("#add-park").on("click", function() {
 var newPark = $("#park-input").val().trim();
 });
  
-parks.push(newPark);
+parksArray.push(newPark);
 
 $(document).on("click", ".park-btn", parks);
   renderButtons();
