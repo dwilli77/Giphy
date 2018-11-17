@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
   var parksArray = ["Yosemite", "Yellowstone", "Zion", "Glacier", "Acadia", "Sequoia", "Grand Teton", "Great Smoky Mountains"];
 
 
@@ -46,14 +46,15 @@ var results = response.data;
             }
 });
 
-$("#add-park").on("click", function(event) {
-  event.preventDefault();
-var newPark = $("#park-input").val().trim();
-console.log(newPark);
-parksArray.push(newPark);
-renderButtons();
-});
-})
-renderButtons();
 
 })
+$("#add-park").on("click", function(event) {
+  event.preventDefault();
+  var newPark = $("#park-input").val().trim();
+  console.log(newPark);
+  parksArray.push(newPark);
+  renderButtons();
+});
+
+renderButtons();
+
