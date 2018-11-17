@@ -1,8 +1,25 @@
 $(document).ready(function() {
+  var parksArray = ["Yosemite", "Yellowstone", "Zion", "Glacier", "Acadia", "Sequoia", "Grand Teton", "Great Smoky Mountains"];
 
-$("button").on("click", function() {
-var parksArray = [];
-var parks = $(this).attr("data-parks");
+
+  function renderButtons() {
+    $(".container1").empty();
+    for (var i = 0; i < parksArray.length; i++) {
+    var a = $("<button>");
+    a.addClass("park-btn");
+    a.attr("data-parks", parksArray[i]);
+    a.text(parksArray[i]);
+    $(".container1").append(a);
+    }
+    // $(document).on("click", ".park-btn", parks);
+    //   renderButtons();
+    }
+
+$(document).on("click", ".park-btn", function(event) {
+  var parks = $(this).attr("data-parks");
+  console.log("Hello");
+  console.log(parks);
+  console.log($(this).attr("data-parks"));
 var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
           parks + "&api_key=2sIeyYSIdhdaA1RkYinrGUPZq99doJyN&limit=10";
   
@@ -29,24 +46,14 @@ var results = response.data;
             }
 });
 
-function renderButtons() {
-$("#park-buttons").empty();
-var a = $("<button>");
-a.addClass("park-btn");
-a.attr("data-parks", parksArray[i]);
-a.text(parks[i]);
-$("#park-buttons").append(a);
-
-$("#add-park").on("click", function() {
-   event.preventDefault();
+$("#add-park").on("click", function(event) {
+  event.preventDefault();
 var newPark = $("#park-input").val().trim();
-});
- 
+console.log(newPark);
 parksArray.push(newPark);
-
-$(document).on("click", ".park-btn", parks);
-  renderButtons();
-}
-
+renderButtons();
+});
 })
+renderButtons();
+
 })

@@ -1,7 +1,11 @@
-#park-buttons {
-    background: aqua;
+.container1 {
+    background: #F3EFE0;
     margin: 20px;
-    border-radius: 15px;
+}
+
+.park-btn {
+    border-radius: 20pt;
+    background: aqua;
 }
 
 #park-form {
@@ -12,6 +16,7 @@
     margin: 20px;
 }
 
-.container {
+.container2 {
     background: #F3EFE0;
+    margin: 20px;
 }
